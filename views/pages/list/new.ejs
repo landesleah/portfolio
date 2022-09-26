@@ -1,0 +1,40 @@
+<%- include('../../partials/head')%>
+<link rel="stylesheet" href="/css/list.css">
+
+</head>
+
+<body>
+
+    <%- include('../../partials/navbar')%>
+    <section class="container mainContent">
+        <h1>Add a New Item</h1>
+        <form action="/shopping_list" method="POST">
+            <label for="name">Item Name:</label>
+            <input type="text" name="name" id="name">
+            <br>
+            <label for="qty">Item Quantity: </label>
+            <input type="number" name="qty" id="qty" value="1">
+            <br>
+            <label for="store">Store: </label>
+            <select name="store" id="store">
+                <% for (let store of stores) { %>
+                <option value="<%= store %>"><%= store %></option>
+                <% } %>
+            </select>
+            <br>
+            <label for="priority">Priority: </label>
+            <select name="priority" id="priority">
+                <% for (let priority of priorities) { %>
+                <option value="<%= priority %>"><%= priority %></option>
+                <% } %>
+            </select>
+            <br>
+            <button>Add Item</button>
+        </form>
+        <a href="/shopping_list"><button>Home</button></a>
+
+
+
+
+    </section>
+    <%- include('../../partials/footer')%>

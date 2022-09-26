@@ -1,0 +1,23 @@
+<%- include('../../partials/head')%>
+<link rel="stylesheet" href="/css/list.css">
+
+</head>
+
+<body>
+
+    <%- include('../../partials/navbar')%>
+    <section class="container mainContent">
+        <h1><%= item.name %></h1>
+        <ul>
+            <li>Quantity: <%= item.qty %> </li>
+            <li>Store: <%= item.store %> </li>
+            <li>Priority: <%= item.priority %> </li>
+        </ul>
+
+        <a href="/shopping_list/<%= item._id %>/edit"><button>Edit</button></a>
+        <a href="/shopping_list"><button>Home</button></a>
+
+
+
+    </section>
+    <%- include('../../partials/footer')%>

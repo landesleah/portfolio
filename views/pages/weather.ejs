@@ -1,0 +1,43 @@
+<%- include('../partials/head')%>
+
+<link rel="stylesheet" href="/css/weather.css">
+</head>
+
+<body>
+
+    <%- include('../partials/navbar')%>
+
+    <section class="container mainContent">
+        <div class="row justify-content-center">
+            <div class="col-md-8 mt-3 ">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1545193544-312983719627?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                        class="card-img-top" alt="sunset reflecting on clouds">
+                    <div class="card-body">
+                        <h1 class="card-title">Weather Search</h1>
+                        <form id="searchForm">
+                            <label for="zipCode">Enter your zip code:</label>
+                            <input type="number" name="zipCode" id="zipCode">
+                            <button>Submit</button>
+                        </form>
+                    </div>
+                    <section class="card-body">
+                        <h3>Current temperature: </h3>
+                        <p id="currentTemp" class="result"></p>
+                        <h3>Feels like: </h3>
+                        <p id="feelsLike" class="result"></p>
+                        <h3>Humidity: </h3>
+                        <p id="humidity" class="result"></p>
+                        <h3>Conditions: </h3>
+                        <p id="conditions" class="result"></p>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <script src="/js/weather.js"></script>
+    <%- include('../partials/footer')%>

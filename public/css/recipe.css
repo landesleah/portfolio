@@ -1,0 +1,65 @@
+.cookies img {
+    width: 70%;
+    margin: auto;
+    display: block;
+}
+
+
+.times {
+    color: #E26D5C;
+    font-weight: 800;
+    padding: 0 10px;
+}
+
+.cookies h1 {
+    text-align: center;
+    font-weight: 600;
+    padding: 20px 0;
+}
+
+.source {
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+}
+
+.source a {
+    color: #E26D5C
+}
+
+.source a:hover {
+    text-decoration: underline #E26D5C;
+    color: #E26D5C
+}
+
+#numberForm, .numberCookies {
+    display: inline;
+}
+
+#numberCookies {
+    width: 50px;
+    color: #E26D5C
+}
+
+#single {
+    background-color: #C9CBA3;
+}
+
+#double {
+    background-color: #FFE1A8;
+}
+
+#triple {
+    background-color: #E26D5C;
+}
+
+.col h2 {
+    padding: 10px 0;
+}
+
+.instructions h2 {
+    padding: 10px 15px;
+}
+
+input:checked+label {
+    text-decoration: line-through;
+}

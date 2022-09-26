@@ -1,0 +1,49 @@
+.mainContent h1 {
+    font-weight: 700;
+    padding: 20px 0;
+    color: #472D30;
+}
+
+
+.mainContent button {
+    background-color: white;
+    border: 1px solid #472D30;
+    border-radius: 10px;
+    padding: 2px 20px;
+    color: #472D30;
+    margin: 2px;
+}
+
+.mainContent button:hover {
+    background-color: #C9CBA3;
+    font-weight: 600;
+    box-shadow: 3px 3px 5px #C9CBA3;
+}
+
+#delete {
+    background-color: white;
+    border: 1px solid #472D30;
+    border-radius: 5px;
+    padding: 2px;
+    color: #472D30;
+    font-size: 0.1rem
+}
+
+#delete:hover {
+    background-color: #E26D5C;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+.mainContent li a, .mainContent li, .mainContent input {
+    color: #472D30;
+    font-size: 1.1rem
+}
+
+li a:hover {
+    color: #472D30;
+}
+
+#qty {
+    width: 40px;
+}

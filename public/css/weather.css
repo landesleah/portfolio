@@ -1,0 +1,42 @@
+.mainContent h1 {
+    font-weight: 700;
+    padding: 20px 0;
+    color: #472D30;
+}
+
+#searchForm label {
+    font-size: 1.2rem;
+}
+
+#searchForm button {
+    background-color: white;
+    border: 1px solid #472D30;
+    border-radius: 10px;
+    padding: 2px 20px;
+    color: #472D30;
+}
+
+#searchForm button:hover {
+    background-color: #C9CBA3;
+    font-weight: 600;
+    box-shadow: 3px 3px 5px #C9CBA3;
+}
+
+#searchForm {
+    margin-bottom: 30px;
+}
+
+#zipCode {
+    width: 100px
+}
+
+.result {
+    color: #E26D5C;
+    font-size: 1.75rem;
+    font-weight: 500
+}
+
+.mainContent h3 {
+    font-weight: 300;
+    text-decoration: underline;
+}

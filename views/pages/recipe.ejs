@@ -1,0 +1,147 @@
+<%- include('../partials/head')%>
+
+<link rel="stylesheet" href="/css/recipe.css">
+</head>
+
+<body>
+
+    <%- include('../partials/navbar')%>
+
+    <main class="container cookies">
+        <img src="https://images.unsplash.com/photo-1600431562968-ef337c8733ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"
+            alt="chocolate chip cookies on a rack next to a bowl of chocolate chips">
+        <h1>The Best Chocolate Chip Cookie Recipe Ever</h1>
+        <p class="source">Taken from <a href="https://joyfoodsunshine.com/the-most-amazing-chocolate-chip-cookies/">Joy
+                Food
+                Sunshine</a></p>
+        <p>This is the best chocolate chip cookie recipe ever. No funny ingredients, no chilling time, etc. Just a
+            simple, straightforward, amazingly delicious, doughy yet still fully cooked, chocolate chip cookie that
+            turns out perfectly every single time! </p>
+        <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stopwatch"
+                viewBox="0 0 16 16">
+                <path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z" />
+                <path
+                    d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z" />
+            </svg> <b>Prep time:</b> 10 min <span class="times">|</span> <b>Cook time:</b> 8 min <span
+                class="times">|</span>
+            <b>Total
+                time:</b> 30 min </p>
+        <div class="numberCookies">
+            <form action="" id="numberForm">
+                <label for="numberCookies">This recipe makes 36 cookies. If you'd rather make a different
+                    amount, insert your number of cookies
+                    here:</label>
+                <input type="number" name="numberCookies" id="numberCookies">
+            </form> <br>
+            <label for="btn-group">Or use the buttons to easily double or triple the recipe:</label>
+
+            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                <button type="button" class="btn" id="single">1x</button>
+                <button type="button" class="btn" id="double">2x</button>
+                <button type="button" class="btn" id="triple">3x</button>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <fieldset>
+                    <h2>Equipment</h2>
+                    <div>
+                        <input type="checkbox" id="spoons" name="spoons">
+                        <label for="spoons">Measuring spoons</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="cups" name="cups">
+                        <label for="cups">Measuring cups</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="mixer" name="mixer">
+                        <label for="mixer">KitchenAid Mixer</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spatula" name="spatula">
+                        <label for="spatula">Spatula</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="sheet" name="sheet">
+                        <label for="sheet">Baking sheet</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col">
+                <fieldset>
+                    <h2>Ingredients</h2>
+                    <div>
+                        <input type="checkbox" id="butter" name="butter">
+                        <label for="butter"><span class="amount">1</span> <span class="unit">cup</span> salted butter,
+                            softened</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="sugar" name="sugar">
+                        <label for="sugar"><span class="amount">1</span> <span class="unit">cup</span> white
+                            (granulated) sugar</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="brownSugar" name="brownSugar">
+                        <label for="brownSugar"><span class="amount">1</span> <span class="unit">cup</span> light brown
+                            sugar, packed</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="vanilla" name="vanilla">
+                        <label for="vanilla"><span class="amount">2</span> <span class="unit">tsp</span> pure vanilla
+                            extract</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="eggs" name="eggs">
+                        <label for="eggs"><span class="amount">2</span> <span class="unit">large eggs</span></label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="flour" name="flour">
+                        <label for="flour"><span class="amount">3</span> <span class="unit">cup</span> all-purpose
+                            flour</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="bakingSoda" name="bakingSoda">
+                        <label for="bakingSoda"><span class="amount">1</span> <span class="unit">tsp</span> baking
+                            soda</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="bakingPowder" name="bakingPowder">
+                        <label for="bakingPowder"><span class="amount">0.5</span> <span class="unit">tsp</span> baking
+                            powder</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="salt" name="salt">
+                        <label for="salt"><span class="amount">1</span> <span class="unit">tsp</span> sea salt</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="chocolate" name="chocolate">
+                        <label for="chocolate"><span class="amount">2</span> <span class="unit">cup</span> chocolate
+                            chips</label>
+                    </div>
+                </fieldset>
+            </div>
+            <hr>
+            <section class="instructions">
+                <h2>Instructions</h2>
+                <ol>
+                    <li>Preheat oven to 375 degrees F. Line a baking pan with parchment paper and set aside.</li>
+                    <li>In a separate bowl mix flour, baking soda, salt, baking powder. Set aside.</li>
+                    <li>Cream together butter and sugars until combined.</li>
+                    <li>Beat in eggs and vanilla until fluffy.</li>
+                    <li>Mix in the dry ingredients until combined.</li>
+                    <li>Add chocolate chips and mix well.</li>
+                    <li>Roll 2-3 Tbsp (depending on how large you like your cookies) of dough at a time into balls and
+                        place them evenly spaced on your prepared cookie sheets. (alternately, use a small cookie scoop
+                        to make your cookies).</li>
+                    <li>Bake in preheated oven for approximately 8-10 minutes. Take them out when they are just
+                        <b>barely</b> starting to turn brown.</li>
+                    <li>Let them sit on the baking pan for 2 minutes before removing to cooling rack.</li>
+                </ol>
+            </section>
+
+
+    </main>
+
+    <script src="/js/recipe.js"></script>
+    <%- include('../partials/footer')%>

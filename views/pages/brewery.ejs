@@ -1,0 +1,58 @@
+<%- include('../partials/head')%>
+
+<link rel="stylesheet" href="/css/brewery.css">
+</head>
+
+<body>
+
+    <%- include('../partials/navbar')%>
+
+    <section class="container mainContent">
+        <h1>Brewery Finder</h1>
+        <form id="zipForm">
+            <label for="zipCode">Enter your zip code to find breweries near you!</label>
+            <input type="number" name="zipCode" id="zipCode">
+            <button>Submit</button>
+        </form>
+        <form id="searchForm">
+            <label for="search">Or search for a specific brewery</label>
+            <input type="text" name="search" id="search">
+            <button>Submit</button>
+        </form>
+        <div class="none hide">
+            <h4>Sorry, no breweries available.</h4>
+        </div>
+        <div class="brewery hide">
+            <h3>Brewery name 1</h3>
+            <p class="phone">Phone: </p>
+            <p class="site">Website: <a href="" class="link"></a></p>
+            <p class="address">Street Address: </p>
+        </div>
+        <div class="brewery hide">
+            <h3>Brewery name 2</h3>
+            <p class="phone">Phone: </p>
+            <p class="site">Website: <a href="" class="link"></a></p>
+            <p class="address">Street Address: </p>
+        </div>
+        <div class="brewery hide">
+            <h3>Brewery name 3</h3>
+            <p class="phone">Phone: </p>
+            <p class="site">Website: <a href="" class="link"></a></p>
+            <p class="address">Street Address: </p>
+        </div>
+        <div class="brewery hide">
+            <h3>Brewery name 4</h3>
+            <p class="phone">Phone: </p>
+            <p class="site">Website: <a href="" class="link"></a></p>
+            <p class="address">Street Address: </p>
+        </div>
+        <div class="brewery hide">
+            <h3>Brewery name 5</h3>
+            <p class="phone">Phone: </p>
+            <p class="site">Website: <a href="" class="link"></a></p>
+            <p class="address">Street Address: </p>
+        </div>
+    </section>
+
+    <script src="/js/brewery.js"></script>
+    <%- include('../partials/footer')%>
