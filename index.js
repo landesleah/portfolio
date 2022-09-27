@@ -57,6 +57,9 @@ app.get('/not_found', (req, res) => {
     res.render('pages/not_found')
 })
 
+app.get('/career', (req, res) => {
+    res.render('pages/career')
+})
 
 // ROUTES SHOPPING LIST:
 
