@@ -7,8 +7,11 @@ const AppError = require('./AppError')
 
 const listRoutes = require('./routes/shoppingList');
 
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 
-mongoose.connect('mongodb://localhost:27017/shoppingList')
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/shoppingList'
+mongoose.connect(dbUrl)
     .then(() => {
         console.log('mongo connection open!');
     }).catch(err => {
@@ -24,8 +27,40 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public'))); // serve static files on every single requres
 
+
 stores = ['Aldi', 'Target', 'Kroger', 'Asian Market'];
 priorities = ['low', 'medium', 'high'];
+
+// DATABASE AND SESSION
+
+const secret = process.env.SECRET || 'thisisasecret'
+
+const store = MongoStore.create({
+    mongoUrl: dbUrl,
+    touchAfter: 24 * 60 * 60,
+    crypto: {
+        secret: secret
+    }
+});
+
+store.on("error", function (e) {
+    console.log('session store error', e)
+})
+
+const sessionConfig = {
+    store,
+    name: 'session', // rename from default (connect.sid) so people don't know what to look for 
+    secret: secret,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        httpOnly: true, // provides some security, cookies not accessible via javascript
+        // secure: true, // only works over https:// (http secure - local host is not https so we can't run this line, want this when you deploy)
+        expires: Date.now() + 1000 * 60 * 60 * 24 * 7, // date.now is in milliseconds, so you calculate how many milliseconds in a week
+        maxAge: 1000 * 60 * 60 * 24 * 7
+    }
+}
+app.use(session(sessionConfig));
 
 // ERROR FUNCTION
 
@@ -89,6 +124,9 @@ app.use((err, req, res, next) => {
 
 
 
-app.listen(3000, () => {
-    console.log("LISTENING ON PORT 3000")
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+    console.log(`listening on port ${port}`)
 })
