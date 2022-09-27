@@ -8,9 +8,15 @@
     <%- include('../../partials/navbar')%>
     <section class="container mainContent">
         <h1>Add a New Item</h1>
-        <form action="/shopping_list" method="POST">
+        <form action="/shopping_list" class="needs-validation" method="POST" novalidate>
             <label for="name">Item Name:</label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Need item name
+            </div>
             <br>
             <label for="qty">Item Quantity: </label>
             <input type="number" name="qty" id="qty" value="1">
