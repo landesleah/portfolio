@@ -5,7 +5,8 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const AppError = require('./AppError')
 
-const Item = require('./models/list_item.js');
+const listRoutes = require('./routes/shoppingList');
+
 
 mongoose.connect('mongodb://localhost:27017/shoppingList')
     .then(() => {
@@ -57,46 +58,11 @@ app.get('/not_found', (req, res) => {
 })
 
 
-// CRUD FOR SHOPPING LIST:
+// ROUTES SHOPPING LIST:
 
-app.get('/shopping_list', wrapAsync(async (req, res) => {
-    const items = await Item.find({});
-    res.render('pages/list/index', { items })
-}))
 
-app.get('/shopping_list/new', (req, res) => {
-    res.render('pages/list/new', { stores, priorities });
-})
+app.use('/shopping_list', listRoutes);
 
-app.post('/shopping_list', wrapAsync(async (req, res) => {
-    const newItem = new Item(req.body);
-    await newItem.save();
-    res.redirect('/shopping_list')
-}))
-
-app.get('/shopping_list/:id', wrapAsync(async (req, res) => {
-    const { id } = req.params;
-    const item = await Item.findById(id);
-    res.render('pages/list/show', { item })
-}))
-
-app.get('/shopping_list/:id/edit', wrapAsync(async (req, res) => {
-    const { id } = req.params;
-    const item = await Item.findById(id);
-    res.render('pages/list/edit', { item })
-}))
-
-app.put('/shopping_list/:id', wrapAsync(async (req, res) => {
-    const { id } = req.params;
-    const item = await Item.findByIdAndUpdate(id, { ...req.body }, { runValidators: true, new: true });
-    res.redirect(`/shopping_list/${id}`)
-}))
-
-app.delete('/shopping_list/:id', wrapAsync(async (req, res) => {
-    const { id } = req.params;
-    const item = await Item.findByIdAndDelete(id);
-    res.redirect('/shopping_list')
-}))
 
 
 // ERROR HANDLERS?????

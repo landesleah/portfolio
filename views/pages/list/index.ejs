@@ -7,6 +7,19 @@
     <%- include('../../partials/navbar')%>
     <section class="container mainContent">
         <h1>Shopping List</h1>
+        <form action="/shopping_list" method="GET" onchange="submit()">
+
+            <label for="sfilter">Filter by store:</label>
+            <select name="store" id="sfilter">
+                <option value="">all</option>
+                <% for(let s of stores) { %>
+                <option value="<%= s %>" <%=store === s? 'selected':''%>><%= s %></option>
+                <% } %>
+            </select>
+        </form>
+
+
+
         <ul>
             <% for (let item of items) { %>
             <li><a href="/shopping_list/<%= item._id %> "><%= item.name %></a>
