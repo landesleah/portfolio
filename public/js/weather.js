@@ -16,11 +16,11 @@ form.addEventListener('submit', async function (e) {
     try {
         const zipCode = form.elements.zipCode.value;
         if (zipRe.test(zipCode)) {
-            const zip = await axios.get(`http://api.openweathermap.org/geo/1.0/zip?zip=${zipCode},US&appid=${weatherToken}`);
+            const zip = await axios.get(`https://api.openweathermap.org/geo/1.0/zip?zip=${zipCode},US&appid=${weatherToken}`);
             // check if this is successful
             let lat = zip.data.lat;
             let lon = zip.data.lon;
-            const res = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherToken}
+            const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherToken}
         `);
             currentTemp.innerText += ` ${kelvinToFahren(res.data.main.temp)} ` + '\u00B0F';
             feelsLike.innerText += ` ${kelvinToFahren(res.data.main.feels_like)} ` + '\u00B0F';
