@@ -2,6 +2,7 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
 
+
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -29,7 +30,7 @@ app.set('views', path.join(__dirname, '/views'));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
-app.use(express.static(path.join(__dirname, 'public'))); // serve static files on every single requres
+app.use(express.static(path.join(__dirname, 'public'))); // serve static files on every single request
 
 
 stores = ['Aldi', 'Target', 'Kroger', 'Asian Market'];

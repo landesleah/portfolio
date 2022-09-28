@@ -1,6 +1,4 @@
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
-}
+
 
 const form = document.querySelector('#searchForm');
 const currentTemp = document.querySelector('#currentTemp')
@@ -10,7 +8,7 @@ const conditions = document.querySelector('#conditions');
 
 const zipRe = /^[0-9]{5}(?:-[0-9]{4})?$/
 
-const weatherToken = process.env.WEATHER_TOKEN
+
 
 form.addEventListener('submit', async function (e) {
     e.preventDefault();
