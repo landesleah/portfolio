@@ -1,10 +1,18 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+
+
 const form = document.querySelector('#searchForm');
 const currentTemp = document.querySelector('#currentTemp')
 const feelsLike = document.querySelector('#feelsLike');
 const humidity = document.querySelector('#humidity');
 const conditions = document.querySelector('#conditions');
 
-const zipRe = /^[0-9]{5}(?:-[0-9]{4})?$/
+const zipRe = /^[0-9]{5}(?:-[0-9]{4})?$/;
+
+const weatherToken = process.env.WEATHER_TOKEN;
+
 
 form.addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -12,12 +20,11 @@ form.addEventListener('submit', async function (e) {
     try {
         const zipCode = form.elements.zipCode.value;
         if (zipRe.test(zipCode)) {
-            const zip = await axios.get(`http://api.openweathermap.org/geo/1.0/zip?zip=${zipCode},US&appid=538d00dd69024ce1cc67c53bd3f0112a`);
+            const zip = await axios.get(`http://api.openweathermap.org/geo/1.0/zip?zip=${zipCode},US&appid=${weatherToken}`);
             // check if this is successful
             let lat = zip.data.lat;
             let lon = zip.data.lon;
-            const res = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=538d00dd69024ce1cc67c53bd3f0112a
-        `);
+            const res = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherToken}`);
             currentTemp.innerText += ` ${kelvinToFahren(res.data.main.temp)} ` + '\u00B0F';
             feelsLike.innerText += ` ${kelvinToFahren(res.data.main.feels_like)} ` + '\u00B0F';
             humidity.innerText += ` ${res.data.main.humidity} %`;
