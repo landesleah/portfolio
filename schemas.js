@@ -25,11 +25,9 @@ const extension = (joi) => ({
 const Joi = BaseJoi.extend(extension)
 
 module.exports.itemSchema = Joi.object({
-    item: Joi.object({
-        name: Joi.string().required().escapeHTML(),
-        qty: Joi.number().min(1),
-        store: Joi.string(),
-        priority: Joi.string()
-    }).required(),
+    name: Joi.string().required().escapeHTML(),
+    qty: Joi.number().min(1),
+    store: Joi.string(),
+    priority: Joi.string()
 });
 
