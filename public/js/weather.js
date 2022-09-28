@@ -16,10 +16,10 @@ form.addEventListener('submit', async function (e) {
             // check if this is successful
             let lat = zip.data.lat;
             let lon = zip.data.lon;
-            const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=538d00dd69024ce1cc67c53bd3f0112a
+            const res = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=538d00dd69024ce1cc67c53bd3f0112a
         `);
-            currentTemp.innerText += ` ${kelvinToFahren(res.data.main.temp)} degrees Fahrenheit`;
-            feelsLike.innerText += ` ${kelvinToFahren(res.data.main.feels_like)} degrees Fahrenheit`;
+            currentTemp.innerText += ` ${kelvinToFahren(res.data.main.temp)} ` + '\u00B0F';
+            feelsLike.innerText += ` ${kelvinToFahren(res.data.main.feels_like)} ` + '\u00B0F';
             humidity.innerText += ` ${res.data.main.humidity} %`;
             conditions.innerText += ` ${res.data.weather[0].main}`
         } else {
